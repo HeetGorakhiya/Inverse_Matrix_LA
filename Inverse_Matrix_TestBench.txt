@@ -1,0 +1,55 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: Heet Gorakhiya (ICT | Sem 3 | LA | 201501034)
+// 
+// Create Date:    18:33:19 10/07/2016 
+// Design Name: 
+// Module Name:    Inverse_Matrix_TestBench 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Inverse_Matrix_TestBench;
+
+	// Inputs
+	reg start;
+	reg clk;
+
+	// Outputs
+	wire [31:0] ram1;
+	wire [31:0] write;
+
+	// Instantiate the Unit Under Test (UUT)
+	Inverse_Matrix uut (
+		.ram1(ram1), 
+		.start(start), 
+		.clk(clk), 
+		.write(write)
+	);
+
+	initial begin
+		// Initialize Inputs
+		start = 0;
+		clk = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		// Add stimulus here
+
+	end
+     always
+	begin
+		#1 clk = ~clk; 
+	end
+    
+endmodule
